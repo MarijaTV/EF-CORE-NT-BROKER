@@ -1,0 +1,17 @@
+﻿@model Company
+@using (Html.BeginForm("Add", "Company", FormMethod.Post))
+{
+    @Html.LabelFor(s => s.CompanyName)
+    @Html.TextBoxFor(s => s.CompanyName)
+    @Html.LabelFor(s => s.City)
+    @Html.TextBoxFor(s => s.City)
+    @Html.LabelFor(s => s.Street)
+    @Html.TextBoxFor(s => s.Street)
+    @Html.LabelFor(s => s.Address)
+    @Html.TextBoxFor(s => s.Address)
+
+    @Html.LabelFor(s => s.BrokerIds)
+    @Html.ListBoxFor(s => s.BrokerIds, new MultiSelectList(Model.Brokers, "Id", "FullName"))
+
+    <input type="submit" value="Submit" />
+}

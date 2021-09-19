@@ -1,0 +1,33 @@
+﻿@model EF_CORE_NT_BROKER.Dtos.ApartmentCreate
+
+@using (Html.BeginForm("Add", "Apartment", FormMethod.Post))
+{
+    @Html.LabelFor(s => s.Apartment.ApartmentType)
+    @Html.DropDownListFor(
+               model => model.Apartment.ApartmentType,
+               new SelectList(Model.Apartment.ApartmentTypes, Model.Apartment.ApartmentTypes),
+               new { @class = "search-dropdown", name = "Types" })
+
+    @Html.LabelFor(s => s.Apartment.City)
+    @Html.TextBoxFor(s => s.Apartment.City)
+
+    @Html.LabelFor(s => s.Apartment.Street)
+    @Html.TextBoxFor(s => s.Apartment.Street)
+
+    @Html.LabelFor(s => s.Apartment.HouseNo)
+    @Html.TextBoxFor(s => s.Apartment.HouseNo)
+
+    @Html.LabelFor(s => s.Apartment.FloorOf)
+    @Html.TextBoxFor(s => s.Apartment.FloorOf)
+
+    @Html.LabelFor(s => s.Apartment.Floors)
+    @Html.TextBoxFor(s => s.Apartment.Floors)
+
+    @Html.LabelFor(s => s.Apartment.Area)
+    @Html.TextBoxFor(s => s.Apartment.Area)
+
+    @Html.LabelFor(s => s.Apartment.CompanyId)
+    @Html.DropDownListFor(s => s.Apartment.CompanyId, new SelectList(Model.AllCompanies, "Id", "CompanyName"))
+
+    <input type="submit" value="Submit" />
+}

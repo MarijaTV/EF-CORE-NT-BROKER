@@ -1,0 +1,16 @@
+﻿@model List<Broker>
+<p>
+    <a asp-action="Add">Create New</a>
+</p>
+
+<ul>
+    @foreach (var broker in @Model)
+    {
+        <li>
+            @broker.FullName
+
+            @Html.ActionLink("Delete", "Delete", "Broker", new { id = broker.Id }, null)
+            @Html.ActionLink("Edit", "Edit", "Broker", new { id = broker.Id }, null)
+        </li>
+    }
+</ul>

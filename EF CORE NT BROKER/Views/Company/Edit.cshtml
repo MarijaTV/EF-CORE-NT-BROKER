@@ -1,0 +1,19 @@
+﻿@model EF_CORE_NT_BROKER.Dtos.CompanyEditDto
+
+@using (Html.BeginForm("Edit", "Company", FormMethod.Post))
+{
+    @Html.LabelFor(s => s.Company.CompanyName)
+    @Html.TextBoxFor(s => s.Company.CompanyName)
+    @Html.LabelFor(s => s.Company.City)
+    @Html.TextBoxFor(s => s.Company.City)
+    @Html.LabelFor(s => s.Company.Street)
+    @Html.TextBoxFor(s => s.Company.Street)
+    @Html.LabelFor(s => s.Company.Address)
+    @Html.TextBoxFor(s => s.Company.Address)
+    @Html.HiddenFor(a => a.Company.Id)
+
+    @Html.LabelFor(s => s.BrokerIds)
+    @Html.ListBoxFor(s => s.BrokerIds, new MultiSelectList(Model.AllBrokers, "Id", "FullName"))
+
+    <input type="submit" value="Save changes" class="btn btn-outline-secondary" />
+}

@@ -1,0 +1,29 @@
+﻿@model List<Company>
+<p>
+    <a asp-action="Add">Create New</a>
+</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model[0].CompanyName)</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var company in @Model)
+        {
+            <tr>
+                <td>@company.CompanyName</td>
+                
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = company.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = company.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = company.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

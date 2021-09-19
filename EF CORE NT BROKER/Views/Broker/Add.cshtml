@@ -1,0 +1,12 @@
+﻿@model Broker
+
+
+@using (Html.BeginForm("Add", "Broker", FormMethod.Post))
+{
+    @Html.LabelFor(s => s.Name)
+    @Html.TextBoxFor(s => s.Name)
+    @Html.LabelFor(s => s.Surname)
+    @Html.TextBoxFor(s => s.Surname)
+
+    <input type="submit" value="Submit" class="btn btn-outline-primary" />
+}
